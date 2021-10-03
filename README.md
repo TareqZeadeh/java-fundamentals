@@ -13,9 +13,19 @@
 3. calculatingAverages method. 
 4. lowestAverage method.
 --------------------------------------------------------
-## lab 02
+## lab 03
 ### create 3 methods:
 1. minMaxTemp method.
 2. tally method.
 3. checkJSfile method. 
+--------------------------------------------------------
+## lab 04
+### create 2 classes:
+#### Restaurant class:
+1.Create Restaurant constructor.
+2.addReview method.
+3.toString method.
+#### Review class:
+1. Create Review constructor.
+2. 2.toString method.
 --------------------------------------------------------
