@@ -29,4 +29,44 @@ class LibraryTest {
         String str2 = rev.toString();
         assertTrue(str1.contains(str2),"Restaurant's reviews should be the same as the Reviews of the users ");
     }
+
+
+    //-------------------------------Lab 07 tests--------------------------------------
+    @Test
+    void testRestaurantConstructor(){
+        Restaurant rest = new Restaurant("MAC", "$$$");
+        String str=rest.toString();
+        assertEquals(str,rest.toString());
+    }
+    @Test
+    void shopReviews(){
+    Shop shop = new Shop("Z" , "good" , "$$$");
+    shop.addReview(new Review("good","ta",2));
+        assertTrue(shop.getReviews().size() > 0 , "True if a review added to the list");
+
+    }
+    @Test
+    void testShopConstructor(){
+        Shop shop = new Shop("MAC","good","$$$");
+        String str=shop.toString();
+        assertEquals(str,shop.toString());
+    }
+
+    @Test
+    void theaterTests(){
+        Theater theater = new Theater("movies house");
+        theater.addMovie("hi");
+        theater.addMovie("hi1");
+        theater.addMovie("hi2");
+        assertTrue(theater.getMoviesList().size() == 3 , "True if a movies added successfully ");
+        theater.removeMovie("hi1");
+        assertTrue(theater.getMoviesList().size() == 2 , "True if hi1 movie removed successfully ");
+        theater.addReview("hi2",new Review("gg","ta",2));
+        assertTrue(theater.getReviews().size() == 1 , "True if a Review added successfully ");
+        theater.addReview("hi3",new Review("gg","ta",2));
+        assertTrue(theater.getReviews().size() == 1 , "True if a non existed movie in the list , nothing will be added");
+        theater.addReview(new Review("gg","ta",2));
+        assertTrue(theater.getReviews().size() == 2 , "True if a review without movie name added successfully");
+
+    }
 }

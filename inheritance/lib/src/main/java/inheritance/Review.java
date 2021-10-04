@@ -5,8 +5,7 @@ public class Review {
     private String author;
     private int starsNum;
 
-    public Review(String tasty) {
-    }
+
 
     public Review(String body, String author, int starsNum) {
         this.body = body;
@@ -22,9 +21,15 @@ public class Review {
     }
 
 
+//    @Override
+//    public String toString() {
+//        return String.format("%s Says"+" "+"%s"+" " +" and his rate is "+"%d\n\n", author, body, starsNum);
+//    }
+
+
     @Override
     public String toString() {
-        return String.format("%s Says"+" "+"%s"+" " +" and his rate is "+"%d\n\n", author, body, starsNum);
+        return "Review{" + "body='" + body + '\'' + ", author='" + author + '\'' + ", starsNum=" + starsNum + '}';
     }
 
     public int getStarsNum() {
