@@ -2,7 +2,8 @@ package inheritance;
 import java.lang.*;
 import java.util.HashSet;
 import java.util.Set;
-public class Restaurant {
+
+public class Restaurant implements Reviewable{
     private String name;
     private String priceCategory;
     private int stars;
@@ -19,7 +20,10 @@ public class Restaurant {
         this.reviews = new HashSet<>();
     }
 
+
+@Override
     public void addReview(Review review){
+
         reviews.add(review);
         int starsSum = 0;
         for (Review rev : reviews) {
@@ -39,11 +43,18 @@ public class Restaurant {
         return restReviews.toString();
     }
 
+//    @Override
+//    public String toString() {
+//        String str = "";
+//        str = str + "Restaurant :  " + name + ", It's prices :  " + priceCategory + "$, with rate :" + stars + " stars "+"\n\n";
+//        str = str + stringReviews();
+//        return str;
+//    }
+
     @Override
     public String toString() {
-        String str = "";
-        str = str + "Restaurant :  " + name + ", It's prices :  " + priceCategory + "$, with rate :" + stars + " stars "+"\n\n";
-        str = str + stringReviews();
-        return str;
+        return "Restaurant{" + "name='" + name + '\'' + ", priceCategory='" + priceCategory + '\'' + ", stars=" + stars + '}' +  " Reviews : " + reviews +"\n";
     }
+
+
 }
